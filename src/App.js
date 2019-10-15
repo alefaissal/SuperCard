@@ -92,6 +92,10 @@ class App extends Component {
 		this.powerInput.current.value = '';
 	};
 
+	componentDidMount = () => {
+		this.powerInput.current.focus();
+	};
+
 	render() {
 		const { classes } = this.props;
 		return (
@@ -107,8 +111,8 @@ class App extends Component {
 								Powers:
 							</Typography>
 							<form onSubmit={(event) => this.addPower(event)}>
-								<input
-									ref={this.powerInput}
+								<Input
+									inputRef={this.powerInput}
 									type="text"
 									placeholder="Add your dog's powers here"
 									fullWidth={true}
